@@ -1,0 +1,8 @@
+1. Creo los paquetes dao, database y model
+2. añado depencencias a pom.xml
+3. Creo la conexion a la base de datos en paquete database:
+    -1. creo clase SchemaDB
+    -2. creo clase DBConecction
+    -3. Al crear las colecciones voy a necesitar una clase para cada coleccion
+    -4. Creo la clase entrada:
+
