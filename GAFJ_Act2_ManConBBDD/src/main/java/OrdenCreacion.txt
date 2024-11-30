@@ -1,0 +1,31 @@
+1. Creo la base de datos con su tabla coches.
+2. Importo dependencias lombok y jdbc
+3. Creo la conexion en nuestro proyecto. Para ello:
+    -P. database: Nueva interfaz SchemaDB
+        - Almaceno nombre BBDD, nombre tabla, nombre columna
+    -P. database: Nueva clase DBConecction
+        - Creo un metodo para dar la conexion
+        - Creo otro metodo para crear conexion
+        - Creo otro metodo para cerrar conexion
+4. Creo la clase Coches en el paquete model
+5. Creo la clase CochesDAO en el paquete DAO
+    -Damos conexion estableciendo conexion a la bbdd
+6. Creo la clase GestorCoches en el paquete controller
+    -Creo objeto cocheDao a partir de la clase CochesDAO
+    -Creo el menu
+7. Comienzo con la creacion de metodos.
+    -añadirCoche
+    -listadoCoche
+    -Borrar coche por id
+    -Consultar coche por id
+    -Borrar coche por id
+8. Creo la tabla Pasajeros y añado una llave foranea a la tabla Coches
+9. Creo la clase Pasajeros y pasajerosDAO
+10. En la clase GestorCoches, creo un nuevo metodo y lo añado al menu
+
+Para realizar el ultimo punto del ejercicio:
+    *listar todos los pasajeros de un coches, el programa pedirá el id
+    de un coche, y nos mostrará todos los pasajeros asociados a él.
+    -Hay que realizar los siguientes pasos:
+    -En la BBDD, crear una nueva tabla, la llamo asignaciones
+    -El siguiente paso es añadir a la interfaz esta tabla
