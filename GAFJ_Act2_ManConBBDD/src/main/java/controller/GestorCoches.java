@@ -71,6 +71,7 @@ public class GestorCoches {
     public void insertarCoche(){
         Scanner scLeer = new Scanner(System.in);
 
+        //Pido datos del coche
         System.out.println("Introduce la matricula del coche: ");
         String matricula = scLeer.nextLine();
 
@@ -84,6 +85,7 @@ public class GestorCoches {
         String color = scLeer.nextLine();
 
         try {
+            //llamo al metodo addCoche de la clase Coche dao y añado un nuevo coche
             cochedao.addCoche(new Coches(matricula, marca, modelo, color));
         } catch (SQLException | NullPointerException e) {
             System.out.println("Error al insertar un nuevo coche");
@@ -155,6 +157,7 @@ public class GestorCoches {
         Scanner scLeer = new Scanner(System.in);
         int id = 0;
 
+        //muestro los ids disponibles
         System.out.println("Lista de coches: ");
         listarCochesId();
 
@@ -162,8 +165,10 @@ public class GestorCoches {
         id = scLeer.nextInt();
 
         try {
+            //llamo al metodo obtenerCoches y almaceno en la variable tipo lista los coches
             ArrayList<Coches> listaCoches = cochedao.obtenerCoches();
             for (Coches coches : listaCoches){
+                //si hay coche con ese id, me imprimes el coche
                 if (coches.getId() == id){
                     System.out.println("ID: " + coches.getId());
                     System.out.println("Matrícula: " + coches.getMatricula());
@@ -189,6 +194,7 @@ public class GestorCoches {
         System.out.println("Introduce el id del coche a actualizar: ");
         id = scLeer.nextInt();
 
+        //creo una lista vacia
         ArrayList<Coches> listaCoches = null;
         try {
             listaCoches = cochedao.obtenerCoches();
@@ -346,6 +352,7 @@ public class GestorCoches {
         }
     }
 
+    //metodo para consultar pasajeros por id
     public void consultarPasajeroId(){
         Scanner scLeer = new Scanner(System.in);
         int id = 0;
@@ -371,6 +378,7 @@ public class GestorCoches {
         }
     }
 
+    //metodo para añadir pasajeros a un coche
     public void addPasajeroCoche(){
         Scanner scLeer = new Scanner(System.in);
         int idPas = 0;
@@ -400,6 +408,8 @@ public class GestorCoches {
         listarPasajeros();
 
     }
+
+    //metodo para eliminar pasajeros de un coche
     public void eliminarPasajeroCoche(){
         Scanner scLeer = new Scanner(System.in);
         int idPas = 0;
@@ -426,6 +436,7 @@ public class GestorCoches {
         }
     }
 
+    //metodo para listar pasajeros de un coche
     public void listarPasajeroCoche(){
         Scanner scLeer = new Scanner(System.in);
         int id = 0;

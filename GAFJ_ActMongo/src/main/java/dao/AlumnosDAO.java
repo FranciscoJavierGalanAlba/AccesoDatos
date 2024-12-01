@@ -24,6 +24,7 @@ public class AlumnosDAO {
         collection.insertOne(alumnos);
     }
 
+    //metodo para listar los alumnos que hay
     public void dameAlumnos(){
         MongoCollection collection = new DBConnection().getAlumnosCollection();
         FindIterable<Alumnos> iterable = collection.find(Alumnos.class);
@@ -35,9 +36,9 @@ public class AlumnosDAO {
         }
     }
 
+    //metodo para listar alumnos mediante email
     public void dameAlumnosEmail(String email){
         Bson filtrado = Filters.and(Filters.eq("email", email));
-
         MongoCollection collection = new DBConnection().getAlumnosCollection();
 
         FindIterable<Alumnos> iterable = collection.find(filtrado);
@@ -48,6 +49,7 @@ public class AlumnosDAO {
         }
     }
 
+    //metodo para eliminar alumnos
     public void eliminarAlumno() {
         // documento filtro ->
         Bson filtrado =

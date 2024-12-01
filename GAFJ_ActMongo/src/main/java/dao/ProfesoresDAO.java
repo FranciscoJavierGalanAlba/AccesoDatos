@@ -26,6 +26,7 @@ public class ProfesoresDAO {
         collection.insertOne(profesores);
     }
 
+    //metodo para listar los profesores que hay
     public void dameProfesores(){
         MongoCollection collection = new DBConnection().getProfesoresCollection();
         FindIterable<Profesores> iterable = collection.find(Profesores.class);
@@ -37,6 +38,7 @@ public class ProfesoresDAO {
         }
     }
 
+    //metodo para mostrar profesores con una edad comprendida entre un rango de edades
     public void mostarProfesorEdad(int edad1, int edad2){
         Bson filtrado =
                 Filters.and(Filters.gt("age", edad1), Filters.lt("age", edad2));
@@ -51,6 +53,7 @@ public class ProfesoresDAO {
         }
     }
 
+    //meotod para actualizar la calificacion de los profesores
     public void actualizarCalifiProfe(String email, double nuevaCalificacion){
         Bson filtro = Filters.eq("email", email);
         MongoCollection collection = new DBConnection().getProfesoresCollection();

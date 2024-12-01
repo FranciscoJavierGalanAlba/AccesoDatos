@@ -96,6 +96,7 @@ public class PasajerosDAO {
 
     }
 
+    //metodo para borrar pasajero de un coche
     public void deletePasajeroCoche(int idCoc, int idPas) throws SQLException {
         String query = String.format("DELETE FROM %s WHERE %S = ? AND %s = ?",
                 SchemaDB.TAB_PAS, SchemaDB.COL_ID_PAS, SchemaDB.COL_ID_COC_PAS) ;
@@ -111,6 +112,7 @@ public class PasajerosDAO {
         }
     }
 
+    //metodo para listar pasajeros de un coche
     public void listarPasajerosDeCoche(int idCoche) throws SQLException {
         String query = String.format("SELECT p.* " +
                         "FROM %s c " +
